@@ -1,0 +1,47 @@
+*{
+
+    margin: 0%;
+    padding: 0%;
+}
+
+h1{
+
+display: flex;
+margin-left: 320px;
+margin-top: 10px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: bolder;
+}
+
+
+body{
+    background-image: url(close-up-view-blue-monday-concept-with-copy-space.jpg);
+    background-size: 1900px 1020px;
+    background-repeat: no-repeat;
+background-position: right 15%;
+
+}
+.form{
+    margin-left: 150px;
+    margin-top: 5px;
+    height: 5vmin;
+    
+}
+#search{
+
+    margin-left: 150px;
+    margin-top: 1px;
+    border: none;
+    outline: none;
+    cursor:auto;
+}
+.form button,input{
+border-radius: 2rem;
+padding: 4px;
+border: 1px solid rgb(32, 16, 16);
+cursor: pointer;
+}
+#addTaskBtn{
+    cursor: cell;   
+}
+
