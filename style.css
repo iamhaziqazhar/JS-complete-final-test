@@ -11,20 +11,14 @@ margin-left: 320px;
 margin-top: 10px;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 font-weight: bolder;
+color: aliceblue;
 }
 
-
-body{
-    background-image: url(close-up-view-blue-monday-concept-with-copy-space.jpg);
-    background-size: 1900px 1020px;
-    background-repeat: no-repeat;
-background-position: right 15%;
-
-}
 .form{
     margin-left: 150px;
-    margin-top: 5px;
+    margin-top: 15px;
     height: 5vmin;
+
     
 }
 #search{
@@ -35,13 +29,28 @@ background-position: right 15%;
     outline: none;
     cursor:auto;
 }
+body{
+background-image: url(flat-lay-work-desktop-with-notebook-keyboard.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
 .form button,input{
 border-radius: 2rem;
 padding: 4px;
 border: 1px solid rgb(32, 16, 16);
-cursor: pointer;
 }
 #addTaskBtn{
     cursor: cell;   
+}
+#taskList ol {
+  margin-top: 100px;
+  list-style: decimal; /* shows 1,2,3 numbering */
+  margin-left: 80px;
+  color: aliceblue;
+}
+#taskList li {
+  margin-left: 40px;
+  margin-top: 15px;
+  color: aliceblue;
 }
 
