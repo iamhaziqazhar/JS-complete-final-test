@@ -9,23 +9,28 @@ const msgTask = document.getElementById("status");
 let tasks = JSON.parse(localStorage.getItem("tasks"))||[];
 // to show on screen js object banane k lie render taks//
 
-function renderList (tasks=list){
+function renderList (list=tasks){
 taskList.innerHTML="";
 
 list.forEach((task , index)=>{
 const li=document.createElement("li");
 li.className="task-item"  ;
-if (task.completed){li.classList.add("completed");
+if (task.completed) {
+      li.classList.add("completed");
+    }
 
-li.innerHTML=`<span><strong>${index+1}<strong/> ${task.title} -${task.description} 
-<button class"complete"= ${task.completed? "undo" : "done"}<button/>
-<button class"complete"= ${task.completed? "undo" : "done"}<button/>
-<button class"complete"= ${task.completed? "undo" : "done"}<button/>`
-
-li.appendChild(li);
-
-}})
+  li.innerHTML = `
+      <span><strong>${index + 1}.</strong> ${task.title} - ${task.description}</span>
+      <div class="actions">
+        <button class="complete">${task.completed ? "Undo" : "Done"}</button>
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    `;
+        taskList.appendChild(li);
+})
 };
+
 
 
 
