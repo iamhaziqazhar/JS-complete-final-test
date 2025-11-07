@@ -42,10 +42,10 @@ border: 1px solid rgb(32, 16, 16);
 #addTaskBtn{
     cursor: cell;   
 }
-#taskList ol {
-  margin-top: 100px;
-  list-style: decimal; /* shows 1,2,3 numbering */
-  margin-left: 80px;
+#taskList {
+  margin-top: 20px;
+  list-style: decimal;
+  margin-left: 100px;
   color: aliceblue;
 }
 #taskList li {

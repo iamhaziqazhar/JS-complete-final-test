@@ -27,9 +27,17 @@ if (task.completed) {
         <button class="delete">Delete</button>
       </div>
     `;
-        taskList.appendChild(li);
-})
-};
+    li.querySelector(".complete").addEventListener("click", () => toggleComplete(index));
+    li.querySelector(".edit").addEventListener("click", () => editTask(index));
+    li.querySelector(".delete").addEventListener("click", () => deleteTask(index));
+
+    taskList.appendChild(li);
+  });
+
+  saveTasks();
+}
+
+
 
 
 
