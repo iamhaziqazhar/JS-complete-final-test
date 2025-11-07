@@ -53,4 +53,7 @@ border: 1px solid rgb(32, 16, 16);
   margin-top: 15px;
   color: aliceblue;
 }
+.task-item.completed span {
+  text-decoration: line-through;
+}
 
