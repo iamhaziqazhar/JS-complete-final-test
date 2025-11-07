@@ -7,4 +7,29 @@ const searchInput = document.getElementById("search");
 const msgTask = document.getElementById("status");
 
 let tasks = JSON.parse(localStorage.getItem("tasks"))||[];
+// to show on screen js object banane k lie render taks//
+
+function renderList (tasks=list){
+taskList.innerHTML="";
+
+list.forEach((task , index)=>{
+const li=document.createElement("li");
+li.className="task-item"  ;
+if (task.completed){li.classList.add("completed");
+
+li.innerHTML=`<span><strong>${index+1}<strong/> ${task.title} -${task.description} 
+<button class"complete"= ${task.completed? "undo" : "done"}<button/>
+<button class"complete"= ${task.completed? "undo" : "done"}<button/>
+<button class"complete"= ${task.completed? "undo" : "done"}<button/>`
+
+li.appendChild(li);
+
+}})
+};
+
+
+
+
+
+
 
