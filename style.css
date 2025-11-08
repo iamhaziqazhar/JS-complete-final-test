@@ -56,4 +56,28 @@ border: 1px solid rgb(32, 16, 16);
 .task-item.completed span {
   text-decoration: line-through;
 }
+.success {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 10px;
+}
 
+.error {
+  color: rgb(244, 0, 0);
+  font-weight: bold;
+  padding: 10px;
+}
+
+.warning {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+    padding: 10px;
+
+}
+
+.clear {
+  color: rgb(255, 255, 255);  /* Clear All ke message ka color */
+  font-weight: bold;
+    padding: 10px;
+
+}

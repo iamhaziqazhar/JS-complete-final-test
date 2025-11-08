@@ -36,7 +36,7 @@ if (task.completed) {
 
   saveTasks();
 }
-function addTask() {
+async function addTask() {
   const title = titleInput.value;
   const desc = descInput.value;
 
@@ -44,6 +44,9 @@ function addTask() {
     showStatus(" Please enter a task title", "error");
     return;
   }
+
+  showStatus(" Adding task...", "success"); 
+  await delay(1500); //
 
   const newTask = {
     title,
@@ -57,6 +60,11 @@ function addTask() {
   renderList();
   showStatus(" Task added successfully!", "success");
 }
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function editTask(index) {
   const task = tasks[index];
   const newTitle = prompt("Edit title:", task.title);
@@ -108,8 +116,16 @@ function saveTasks() {
 function showStatus(msg, type) {
   msgTask.textContent = msg;
   msgTask.className = type;
-  setTimeout(() => (msgTask.textContent = ""), 2000);
+  setTimeout(() => (msgTask.textContent = ""), 3000);
 };
 
+addBtn.addEventListener("click", addTask);
+clearBtn.addEventListener("click", clearAll);
+searchInput.addEventListener("input", searchTasks);
 
-
+renderList();
+function toggleComplete(index) {
+  tasks[index].completed = !tasks[index].completed;
+  renderList();
+  showStatus(" Task status updated!", "success");
+}
