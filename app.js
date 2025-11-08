@@ -80,6 +80,28 @@ function toggleComplete(index) {
   showStatus(" Task status updated!", "success");
 }
 
+function clearAll() {
+  if (tasks.length === 0) {
+    showStatus("⚠️ No tasks to clear!", "error");
+    return;
+  }
+  if (confirm("Are you sure you want to clear all tasks?")) {
+    tasks = [];
+    renderTasks();
+    showStatus("🧹 All tasks cleared!", "success");
+  }
+}
 
-
+function searchTasks(e) {
+  const text = e.target.value.toLowerCase();
+  const filtered = tasks.filter(
+    (t) =>
+      t.title.toLowerCase().includes(text) ||
+      t.description.toLowerCase().includes(text)
+  );
+  renderTasks(filtered);
+}
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
