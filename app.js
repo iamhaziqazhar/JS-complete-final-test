@@ -65,18 +65,18 @@ function editTask(index) {
   if (newTitle !== null) task.title = newTitle.trim() ;
   if (newDesc !== null) task.description = newDesc.trim();
 
-  renderTasks();
+  renderList();
   showStatus(" Task updated successfully!", "success");
 }
 
 function deleteTask(index) {
   tasks.splice(index, 1);
-  renderTasks();
+  renderList();
   showStatus(" Task deleted!", "error");
 }
 function toggleComplete(index) {
   tasks[index].completed = !tasks[index].completed;
-  renderTasks();
+  renderList();
   showStatus(" Task status updated!", "success");
 }
 
@@ -87,7 +87,7 @@ function clearAll() {
   }
   if (confirm("Are you sure you want to clear all tasks?")) {
     tasks = [];
-    renderTasks();
+    renderList();
     showStatus("🧹 All tasks cleared!", "success");
   }
 }
@@ -99,9 +99,17 @@ function searchTasks(e) {
       t.title.toLowerCase().includes(text) ||
       t.description.toLowerCase().includes(text)
   );
-  renderTasks(filtered);
+  renderList(filtered);
 }
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+function showStatus(msg, type) {
+  msgTask.textContent = msg;
+  msgTask.className = type;
+  setTimeout(() => (msgTask.textContent = ""), 2000);
+};
+
+
 
