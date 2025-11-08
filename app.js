@@ -50,7 +50,7 @@ async function addTask() {
   }
 
   showStatus(" Adding task...", "success"); 
-  await delay(1500); //
+  await delay(1500); 
 
   const newTask = {
     title,
@@ -94,13 +94,13 @@ function toggleComplete(index) {
 
 function clearAll() {
   if (tasks.length === 0) {
-    showStatus("⚠️ No tasks to clear!", "error");
+    showStatus(" No tasks to clear!", "error");
     return;
   }
   if (confirm("Are you sure you want to clear all tasks?")) {
     tasks = [];
     renderList();
-    showStatus("🧹 All tasks cleared!", "success");
+    showStatus(" All tasks cleared!", "success");
   }
 }
 
