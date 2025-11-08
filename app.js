@@ -20,7 +20,7 @@ if (task.completed) {
     }
 
   li.innerHTML = `
-      <span><strong>${index + 1}.</strong> ${task.title} - ${task.description}</span>
+      <span> ${task.title} - ${task.description}</span>
       <div class="actions">
         <button class="complete">${task.completed ? "Undo" : "Done"}</button>
         <button class="edit">Edit</button>
@@ -42,6 +42,10 @@ async function addTask() {
 
   if (!title) {
     showStatus(" Please enter a task title", "error");
+    return;
+  }
+  if (!desc) {
+    showStatus(" Please enter a task Description", "error");
     return;
   }
 
