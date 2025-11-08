@@ -36,9 +36,38 @@ if (task.completed) {
 
   saveTasks();
 }
+function addTask() {
+  const title = titleInput.value;
+  const desc = descInput.value;
 
+  if (!title) {
+    showStatus(" Please enter a task title", "error");
+    return;
+  }
 
+  const newTask = {
+    title,
+    description: desc,
+    completed: false,
+  };
 
+  tasks.push(newTask);
+  titleInput.value = "";
+  descInput.value = "";
+  renderList();
+  showStatus("✅ Task added successfully!", "success");
+}
+function editTask(index) {
+  const task = tasks[index];
+  const newTitle = prompt("Edit title:", task.title);
+  const newDesc = prompt("Edit description:", task.description);
+
+  if (newTitle !== null) task.title = newTitle.trim() || task.title;
+  if (newDesc !== null) task.description = newDesc.trim() || task.description;
+
+  renderTasks();
+  showStatus(" Task updated successfully!", "success");
+}
 
 
 
