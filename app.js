@@ -37,8 +37,8 @@ if (task.completed) {
   saveTasks();
 }
 async function addTask() {
-  const title = titleInput.value;
-  const desc = descInput.value;
+  const title = titleInput.value.trim();
+  const desc = descInput.value.trim();
 
   if (!title) {
     showStatus(" Please enter a task title", "error");
