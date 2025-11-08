@@ -55,22 +55,30 @@ function addTask() {
   titleInput.value = "";
   descInput.value = "";
   renderList();
-  showStatus("✅ Task added successfully!", "success");
+  showStatus(" Task added successfully!", "success");
 }
 function editTask(index) {
   const task = tasks[index];
   const newTitle = prompt("Edit title:", task.title);
   const newDesc = prompt("Edit description:", task.description);
 
-  if (newTitle !== null) task.title = newTitle.trim() || task.title;
-  if (newDesc !== null) task.description = newDesc.trim() || task.description;
+  if (newTitle !== null) task.title = newTitle.trim() ;
+  if (newDesc !== null) task.description = newDesc.trim();
 
   renderTasks();
   showStatus(" Task updated successfully!", "success");
 }
 
-
-
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  renderTasks();
+  showStatus(" Task deleted!", "error");
+}
+function toggleComplete(index) {
+  tasks[index].completed = !tasks[index].completed;
+  renderTasks();
+  showStatus(" Task status updated!", "success");
+}
 
 
 
